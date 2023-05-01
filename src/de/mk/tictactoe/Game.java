@@ -110,7 +110,7 @@ public class Game {
      * @return true, when it's Cross' turn or Circle's turn
      */
     public boolean isCrossTurn() {
-        return (state & (1 << 18)) == 0;
+        return (state & (1 << 18)) != 0;
     }
 
     /**
