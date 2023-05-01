@@ -1,4 +1,4 @@
-import de.mk.tictactoe.GameLoop;
+package de.mk.tictactoe;
 
 public class Main {
     public static void main(String[] args) {

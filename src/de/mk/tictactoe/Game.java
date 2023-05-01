@@ -17,7 +17,7 @@ public class Game {
      * the first bit is set, when the field is taken by the player Cross,
      * the second bit is set, when the field is taken by Circle
      */
-    private int state = 0b0___00_00_00__00_00_00__00_00_00;
+    private int state = 0b1___00_00_00__00_00_00__00_00_00;
 
     /**
      * Searches the board for free cells which where not yet taken by any player
@@ -63,7 +63,7 @@ public class Game {
         int topLeft = getCellVal(0);
         int bottomRight = getCellVal(8);
 
-        if ((center & 0b11) > 0) {
+        if ((center & 0b11) > 0) { // if center is taken
             if (center == getCellVal(0) && center == getCellVal(8)) { // and left diagonal
                 return true;
             } else if (center == getCellVal(2) && center == getCellVal(6)) { // or right diagonal
@@ -75,7 +75,7 @@ public class Game {
             }
         }
 
-        if ((topLeft & 0b11) > 0) {
+        if ((topLeft & 0b11) > 0) { // if top-left is taken
             if (topLeft == getCellVal(1) && topLeft == getCellVal(2)) { // and top-horizontal
                 return true;
             } else if (topLeft == getCellVal(3) && topLeft == getCellVal(6)) { // or left-vertical
@@ -83,7 +83,7 @@ public class Game {
             }
         }
 
-        if ((bottomRight & 0b11) > 0) {
+        if ((bottomRight & 0b11) > 0) { // if bottom-right is taken
             if (bottomRight == getCellVal(2) && bottomRight == getCellVal(5)) { // and right-vertical
                 return true;
             } else if (bottomRight == getCellVal(6) && bottomRight == getCellVal(7)) { // or bottom-horizontal
